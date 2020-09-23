@@ -9,6 +9,7 @@ class Dictionary {
    * La palabra devuelta debe ser aleatoria.
    */
   String makeRandomWord() {
-    return "bullseye"; // stub
+    String data = httpGet('https://random-word-api.herokuapp.com/word');
+    print(data);
   }
 }
