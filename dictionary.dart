@@ -10,6 +10,6 @@ class Dictionary {
    */
   String makeRandomWord() {
     String data = httpGet('https://random-word-api.herokuapp.com/word');
-    print(data);
+    return data;
   }
 }

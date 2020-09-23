@@ -9,11 +9,6 @@ class Gallows {
          
          ''',
     '''
-		 
-		 
-		 
-		 
-		 
 =========''',
     '''
       +
@@ -88,4 +83,9 @@ class Gallows {
       |
 ========='''
   ];
+  
+  void impGallow(int posi){
+    print(level[posi])
+  }
 }
+
