@@ -13,14 +13,16 @@ class TxtProcessor {
    * No es sensitivo a mayúsculas y minúsculas, la 'a' y la 'A' son igual.
    */
   static bool isNewLetterInList(String letter, List<String> letterTrialList) {
-    return true; // stub
+    if (letterTrialList.contains(letter.toUpperCase())) {
+      return false;
+    } // stub
   }
 
   /*
    * #4. Comprobar si una letra está en una palabra.
    */
   static bool isLetterInWord(String letter, String word) {
-    return false; // stub
+    return word.contains(letter); // stub
   }
 
   /*
