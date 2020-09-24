@@ -40,7 +40,6 @@ class TxtProcessor {
         retorno += "_";
       if (i < keyword.length - 1) retorno += " ";
     }
-
     return retorno;
   }
 
