@@ -43,15 +43,18 @@ class Game {
    * en ese caso actualizar el estado
    * para que salga del game loop.
    */
+  // terminado
   void update_game() {
     if (!TxtProcessor.isNewLetterInList(inputLetter, letterTrialList)) return;
     letterTrialList.add(inputLetter);
     if (!TxtProcessor.isLetterInWord(inputLetter, keyword)) mistakeCounter++;
     guessedLetters = TxtProcessor.guessedLetters(
         keyword, letterTrialList); // ~ "b u _ _ s e _ e"
-    gameStatus = (mistakeCounter < MAX_MISTAKES) ? Status.playing : Status.lost;
     missedLetters =
         TxtProcessor.missedLetters(keyword, letterTrialList); // ~ "a i t"
+    if (mistakeCounter == MAX_MISTAKES)
+      gameStatus = Status.lost;
+    else if (guessedLetters == keyword.length) gameStatus = Status.won;
   }
 
   void render_game() {
