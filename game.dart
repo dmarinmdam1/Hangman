@@ -49,9 +49,11 @@ class Game {
     if (!TxtProcessor.isLetterInWord(inputLetter, keyword)) mistakeCounter++;
     guessedLetters = TxtProcessor.guessedLetters(
         keyword, letterTrialList); // ~ "b u _ _ s e _ e"
-    gameStatus = (mistakeCounter < MAX_MISTAKES) ? Status.playing : Status.lost;
     missedLetters =
         TxtProcessor.missedLetters(keyword, letterTrialList); // ~ "a i t"
+    if (mistakeCounter == MAX_MISTAKES)
+      gameStatus = Status.lost;
+    else if (guessedLetters == keyword.length) gameStatus = Status.won;
   }
 
   void render_game() {
