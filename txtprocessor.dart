@@ -31,6 +31,7 @@ class TxtProcessor {
    * Ej. Si keyword = "bullseye" y la lista es ["a","b","i","s","t","e","u"]
    * devolverá "b u _ _ s e _ e"
    */
+  // terminado
   static String guessedLetters(String keyword, List<String> letterTrialList) {
     String retorno = "";
     for (int i = 0; i < keyword.length; i++) {

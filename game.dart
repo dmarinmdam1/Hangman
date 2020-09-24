@@ -43,6 +43,7 @@ class Game {
    * en ese caso actualizar el estado
    * para que salga del game loop.
    */
+  // terminado
   void update_game() {
     if (!TxtProcessor.isNewLetterInList(inputLetter, letterTrialList)) return;
     letterTrialList.add(inputLetter);
