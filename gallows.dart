@@ -83,9 +83,8 @@ class Gallows {
       |
 ========='''
   ];
-  
-  void impGallow(int posi){
-    print(level[posi])
+
+  void impGallow(int posi) {
+    print(level[posi]);
   }
 }
-

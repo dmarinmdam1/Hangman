@@ -18,7 +18,7 @@ class Renderer {
    */
   void drawGame(int mistakes, String missed, String guessed) {
     print("Te quedan ${max_mistakes - mistakes} fallos.");
-    gallows.impGallows(mistakes);
+    gallows.impGallow(mistakes);
     print(guessed);
     print("Fallado: $missed");
   }

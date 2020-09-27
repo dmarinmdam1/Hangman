@@ -1,3 +1,5 @@
+import 'package:http/http.dart' as http;
+
 class Dictionary {
   /*
    * #1. Se puede tener:
@@ -9,7 +11,6 @@ class Dictionary {
    * La palabra devuelta debe ser aleatoria.
    */
   String makeRandomWord() {
-    String data = httpGet('https://random-word-api.herokuapp.com/word');
-    return data;
+    return http.get('https://random-word-api.herokuapp.com/word').toString();
   }
 }

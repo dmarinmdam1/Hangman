@@ -13,9 +13,13 @@ class TxtProcessor {
    * No es sensitivo a mayúsculas y minúsculas, la 'a' y la 'A' son igual.
    */
   static bool isNewLetterInList(String letter, List<String> letterTrialList) {
-    if (letterTrialList.contains(letter.toUpperCase())) {
-      return false;
-    } // stub
+    int letterInt = int.parse(letter[0].toUpperCase());
+    if ((letterInt > 64 && letterInt < 91)) {
+      if (letterTrialList.contains(letter.toUpperCase())) {
+        return true;
+      }
+    }
+    return false;
   }
 
   /*
@@ -56,7 +60,8 @@ class TxtProcessor {
     var missedLetters = "";
     // stub (está mal, incorpora todas las letras, era para ver cambios)
     for (int i = 0; i < letterTrialList.length; i++) {
-      if(keyword.toLowerCase().contains(letterTrialList[i].toLowerCase()) == false){
+      if (keyword.toLowerCase().contains(letterTrialList[i].toLowerCase()) ==
+          false) {
         missedLetters = "$missedLetters ${letterTrialList[i]}";
       }
     }
