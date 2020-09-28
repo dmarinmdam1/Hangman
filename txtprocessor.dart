@@ -60,8 +60,7 @@ class TxtProcessor {
     var missedLetters = "";
     // stub (está mal, incorpora todas las letras, era para ver cambios)
     for (int i = 0; i < letterTrialList.length; i++) {
-      if (keyword.toLowerCase().contains(letterTrialList[i].toLowerCase()) ==
-          false) {
+      if (keyword.toLowerCase().contains(letterTrialList[i].toLowerCase()) == false) {
         missedLetters = "$missedLetters ${letterTrialList[i]}";
       }
     }

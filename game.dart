@@ -34,8 +34,7 @@ class Game {
 
   void process_input() {
     inputLetter = Input.readLetter();
-    print(
-        "\x1B[2J\x1B[0;0H"); // Limpia terminal y coloca cursor en coord. (0,0)
+    print("\x1B[2J\x1B[0;0H"); // Limpia terminal y coloca cursor en coord. (0,0)
   }
 
   /*
@@ -45,16 +44,14 @@ class Game {
    */
   // terminado
   void update_game() {
-    if (!TxtProcessor.isNewLetterInList(inputLetter, letterTrialList)) return;
+    if (TxtProcessor.isNewLetterInList(inputLetter, letterTrialList)) return;
     letterTrialList.add(inputLetter);
     if (!TxtProcessor.isLetterInWord(inputLetter, keyword)) mistakeCounter++;
-    guessedLetters = TxtProcessor.guessedLetters(
-        keyword, letterTrialList); // ~ "b u _ _ s e _ e"
-    missedLetters =
-        TxtProcessor.missedLetters(keyword, letterTrialList); // ~ "a i t"
+    guessedLetters = TxtProcessor.guessedLetters(keyword, letterTrialList); // ~ "b u _ _ s e _ e"
+    missedLetters = TxtProcessor.missedLetters(keyword, letterTrialList); // ~ "a i t"
     if (mistakeCounter == MAX_MISTAKES)
       gameStatus = Status.lost;
-    else if (guessedLetters == keyword.length) gameStatus = Status.won;
+    else if (!guessedLetters.contains("_")) gameStatus = Status.won;
   }
 
   void render_game() {
