@@ -11,7 +11,7 @@ class Input {
     stdin.echoMode = false;
     stdin.lineMode = false;
     stdout.write("Letra: ");
-    int c = stdin.readByteSync(); // 10=Enter, 27=Esc
+    int c = stdin.readByteSync();
     String s = String.fromCharCode(c).toUpperCase();
 
     if (s.contains(new RegExp(r'[A-Z]'))) {

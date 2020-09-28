@@ -13,9 +13,11 @@ class TxtProcessor {
    * No es sensitivo a mayúsculas y minúsculas, la 'a' y la 'A' son igual.
    */
   static bool isNewLetterInList(String letter, List<String> letterTrialList) {
-    if (letterTrialList.contains(letter.toUpperCase())) {
-      return false;
-    } // stub
+    if (letterTrialList.contains(letter)) return true;
+
+    if (letter == "0") return true;
+
+    return false;
   }
 
   /*
