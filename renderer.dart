@@ -8,8 +8,9 @@ class Renderer {
 
   void drawInit(guessed) {
     print("EL AHORCADO");
-    print("");
+    gallows.impGallow(0);
     print(guessed);
+    print("");
   }
 
   /*
@@ -20,7 +21,8 @@ class Renderer {
     print("Te quedan ${max_mistakes - mistakes} fallos.");
     gallows.impGallow(mistakes);
     print(guessed);
-    print("Fallado: $missed");
+    print("");
+    if (mistakes > 0) print("Fallado: $missed");
   }
 
   void drawSuccess() {

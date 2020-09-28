@@ -59,7 +59,11 @@ class Game {
   }
 
   void clean_up() {
-    if (gameStatus == Status.lost) renderer.drawFailure();
-    if (gameStatus == Status.won) renderer.drawSuccess();
+    if (gameStatus == Status.lost) {
+      renderer.drawFailure();
+      print("Palabra: $keyword");
+    } else
+      renderer.drawSuccess();
+    print("");
   }
 }

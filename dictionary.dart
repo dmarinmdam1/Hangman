@@ -10,7 +10,7 @@ class Dictionary {
    *     p.ej. https://random-word-api.herokuapp.com/word
    * La palabra devuelta debe ser aleatoria.
    */
-  String makeRandomWord() {
-    return http.get('https://random-word-api.herokuapp.com/word').toString();
+  Future<String> makeRandomWord() async {
+    return await http.read("https://random-word-api.herokuapp.com/word");
   }
 }
