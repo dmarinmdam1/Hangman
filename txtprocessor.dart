@@ -13,12 +13,10 @@ class TxtProcessor {
    * No es sensitivo a mayúsculas y minúsculas, la 'a' y la 'A' son igual.
    */
   static bool isNewLetterInList(String letter, List<String> letterTrialList) {
-    int letterInt = int.parse(letter[0].toUpperCase());
-    if ((letterInt > 64 && letterInt < 91)) {
-      if (letterTrialList.contains(letter.toUpperCase())) {
-        return true;
-      }
-    }
+    if (letterTrialList.contains(letter)) return true;
+
+    if (letter == "0") return true;
+
     return false;
   }
 
